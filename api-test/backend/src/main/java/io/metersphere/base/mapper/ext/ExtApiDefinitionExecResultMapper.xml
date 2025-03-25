@@ -242,7 +242,7 @@
     </sql>
 
     <update id="update" parameterType="java.util.List">
-        update api_definition_exec_result set status="STOPPED" where id in
+        update api_definition_exec_result set status='STOPPED' where id in
         <foreach collection="ids" item="value" separator="," open="(" close=")">
             #{value}
         </foreach>
@@ -276,7 +276,7 @@
 
     <select id="findByProjectIds" resultType="io.metersphere.commons.vo.TaskResultVO"
             parameterType="java.lang.String">
-        select actuator ,id from api_definition_exec_result where status in ("running","starting","PENDING") and
+        select actuator ,id from api_definition_exec_result where status in ('running','starting','PENDING') and
         project_id in
         <foreach collection="request.projects" item="id" separator="," open="(" close=")">
             #{id}
@@ -307,7 +307,7 @@
 
     <update id="updateAllStatus">
         update api_definition_exec_result
-        set status="STOPPED"
+        set status='STOPPED'
         where status in ('Rerunning', 'Running')
     </update>
 

@@ -3,7 +3,7 @@
 <mapper namespace="io.metersphere.base.mapper.ext.BaseFileMetadataMapper">
     <select id="getProjectFiles" resultType="io.metersphere.base.domain.FileMetadataWithBLOBs">
         SELECT file_metadata.* FROM file_metadata
-        WHERE project_id = #{projectId,jdbcType=VARCHAR} AND type != 'RSA_KEY' AND latest IS TRUE
+        WHERE project_id = #{projectId,jdbcType=VARCHAR} AND type != 'RSA_KEY' AND latest = TRUE
         <if test="request.name != null and request.name !=''">
             AND ( file_metadata.name LIKE CONCAT('%', #{request.name}, '%')
             OR file_metadata.tags LIKE CONCAT('%', #{request.name}, '%')

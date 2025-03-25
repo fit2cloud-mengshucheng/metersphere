@@ -108,7 +108,7 @@ public class BaseProjectService {
             if (StringUtils.isNotBlank(request.getWorkspaceId())) {
                 criteria.andWorkspaceIdEqualTo(request.getWorkspaceId());
             }
-            example.setOrderByClause(" CONVERT(name USING gbk) COLLATE gbk_chinese_ci ASC ");
+            example.setOrderByClause(" name ASC ");
             List<Project> returnProject = projectMapper.selectByExample(example);
             this.swapProject(returnProject, sessionProjectId);
             return returnProject;

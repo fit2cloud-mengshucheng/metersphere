@@ -181,7 +181,7 @@
     </update>
 
     <update id="updateAllStatus">
-        update test_plan_report set status="COMPLETED" where status in ('Rerunning','Running')
+        update test_plan_report set status='COMPLETED' where status in ('Rerunning','Running')
     </update>
 
 </mapper>

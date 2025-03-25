@@ -604,7 +604,7 @@
         from api_scenario
         where project_id = #{projectId}
           and status = 'Trash'
-          and latest IS TRUE
+          and latest = TRUE
     </select>
 
     <select id="getIdsOrderByUpdateTime" resultType="java.lang.String">
@@ -867,7 +867,7 @@
         from api_scenario
         WHERE project_id = #{projectId}
           AND status = #{status}
-          AND latest IS TRUE
+          AND latest = TRUE
     </select>
 
     <select id="selectBaseInfoByCondition" resultType="io.metersphere.base.domain.ApiScenario">

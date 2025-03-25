@@ -1280,7 +1280,7 @@
             AND version_id = #{versionId}
         </if>
         <if test="versionId == null">
-            AND latest IS TRUE
+            AND latest = TRUE
         </if>
     </select>
 
@@ -1295,7 +1295,7 @@
             AND version_id = #{versionId}
         </if>
         <if test="versionId == null">
-            AND latest IS TRUE
+            AND latest = TRUE
         </if>
     </select>
 
